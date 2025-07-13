@@ -1,0 +1,74 @@
+#include <stdio.h>
+
+/* Programa que calcula los promedios de peso y altura para hombres y mujeres mayores de 18 años */
+
+int main(void)
+{
+int N, I, SEXO, EDAD;
+float PESO, ALTURA;
+float SUMP_H = 0, SUMA_H = 0, SUMP_M = 0, SUMA_M = 0;
+int CONT_H = 0, CONT_M = 0;
+
+printf("Ingrese la cantidad de personas (N): ");
+scanf("%d", &N);
+
+for (I = 1; I <= N; I++)
+    {
+printf("\nPersona #%d:\n", I);
+
+printf("Ingrese el peso (kg): ");
+scanf("%f", &PESO);
+
+printf("Ingrese la altura (m): ");
+scanf("%f", &ALTURA);
+
+    printf("Ingrese el sexo (1 = hombre, 0 = mujer): ");
+        scanf("%d", &SEXO);
+
+        printf("Ingrese la edad: ");
+        scanf("%d", &EDAD);
+
+        if (EDAD >= 18)
+        {
+            if (SEXO == 1)
+            {
+                SUMP_H += PESO;
+                SUMA_H += ALTURA;
+                CONT_H++;
+            }
+            else if (SEXO == 0)
+            {
+                SUMP_M += PESO;
+                SUMA_M += ALTURA;
+            CONT_M++;
+            }
+        }
+    }
+
+    if (CONT_H > 0)
+    {
+        printf("\nHombres mayores o iguales a 18 años:");
+        printf("\nPromedio de peso: %.2f kg", SUMP_H / CONT_H);
+        printf("\nPromedio de altura: %.2f m", SUMA_H / CONT_H);
+    }
+    else
+    {
+        printf("\nNo hay hombres mayores o iguales a 18 años.");
+    }
+
+    if (CONT_M > 0)
+    {
+        printf("\n\nMujeres mayores o iguales a 18 años:");
+        printf("\nPromedio de peso: %.2f kg", SUMP_M / CONT_M);
+        printf("\nPromedio de altura: %.2f m", SUMA_M / CONT_M);
+    }
+    else
+    {
+        printf("\n\nNo hay mujeres mayores o iguales a 18 años.");
+    }
+
+    printf("\n");
+
+    return 0;
+}
+

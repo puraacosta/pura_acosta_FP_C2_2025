@@ -1,0 +1,40 @@
+#include <stdio.h>
+#include <math.h>
+
+int main(void)
+{
+    int N, i;
+    int Y;
+    double F;
+
+    printf("Ingrese la cantidad de valores N: ");
+    scanf("%d", &N);
+
+    for (i = 1; i <= N; i++)
+    {
+        printf("Ingrese el valor Y #%d: ", i);
+        scanf("%d", &Y);
+
+        if (Y >= 0 && Y <= 15)
+        {
+            F = 15;
+        }
+        else if (Y > 15 && Y <= 30)
+        {
+            F = pow(Y, 2) - 12;
+        }
+        else if (Y > 30 && Y <= 60)
+        {
+            // Simplificando 4 * Y^3 / Y^2 = 4 * Y
+            F = 4 * Y - 8;
+        }
+        else
+        {
+            F = 0;
+        }
+
+        printf("F(Y) = %.2lf\n", F);
+    }
+
+    return 0;
+}

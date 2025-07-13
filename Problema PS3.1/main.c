@@ -1,0 +1,21 @@
+#include <stdio.h>
+
+/* Programa que genera la tabla de multiplicar de un número N desde 1 hasta 10. */
+
+int main(void)
+{
+    int N, I, R;
+
+printf("ingrese un numero entero positivo: ");
+    scanf("%d", &N);
+
+printf("\nTabla de multiplicar del %d:\n", N);
+
+for (I = 1; I <= 10; I++)
+    {
+        R = N * I;
+    printf("%d x %d = %d\n", N, I, R);
+    }
+
+    return 0;
+}
